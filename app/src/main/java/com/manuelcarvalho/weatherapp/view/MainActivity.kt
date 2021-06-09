@@ -1,4 +1,4 @@
-package com.manuelcarvalho.weatherapp
+package com.manuelcarvalho.weatherapp.view
 
 import android.os.Bundle
 import com.google.android.material.snackbar.Snackbar
@@ -9,6 +9,7 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import android.view.Menu
 import android.view.MenuItem
+import com.manuelcarvalho.weatherapp.R
 import com.manuelcarvalho.weatherapp.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
