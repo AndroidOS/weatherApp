@@ -16,12 +16,10 @@ class WeatherApiService {
         .build()
         .create(WeatherApi::class.java)
 
-    fun getQuakes(): Single<Root> {
+    fun getWeather(): Single<Root> {
         return api.getQuakes()
     }
 
-    fun getQuakes1(startDate: String, endDate: String): Single<Root> {
-        return api.getQuakes1("geojson", startDate, endDate)
-    }
+
 
 }
