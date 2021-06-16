@@ -50,6 +50,11 @@ class ListViewModel(application: Application) : BaseViewModel(application) {
         )
     }
 
+    fun refresh() {
+
+        fetchFromRemote()
+    }
+
 
     override fun onCleared() {
         super.onCleared()
