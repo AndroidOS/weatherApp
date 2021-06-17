@@ -1,5 +1,6 @@
 package com.manuelcarvalho.weatherapp.model
 
+import com.manuelcarvalho.weatherapp.utils.weatherKey
 import io.reactivex.Single
 import retrofit2.http.GET
 import retrofit2.http.Headers
@@ -12,12 +13,15 @@ interface WeatherApi {
         "Content-type:application/json"
     )
 
-    @GET("query?format=geojson&starttime=2019-12-11&endtime=2019-12-12")
-    fun getQuakes(): Single<Root>
+//    @GET("query?format=geojson&starttime=2019-12-11&endtime=2019-12-12")
+//    fun getQuakes(): Single<Root>
 
-    @GET("query")
-    fun getQuakes1(@Query("format") format: String, @Query("starttime") startTime: String, @Query("endtime") endTime: String): Single<Root>
+    @GET("weather?q=London,uk&APPID=${weatherKey}")
+    fun getWeather(): Single<Root>
 
+//    @GET("query")
+//    fun getWeathers(@Query("format") format: String, @Query("starttime") startTime: String, @Query("endtime") endTime: String): Single<Root>
+//
 
 }
 

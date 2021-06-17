@@ -7,7 +7,8 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class WeatherApiService {
 
-    private val BASE_URL = "https://earthquake.usgs.gov/fdsnws/event/1/"
+    private val BASE_URL = "api.openweathermap.org/data/2.5/"
+    //private val BASE_URL = "https://earthquake.usgs.gov/fdsnws/event/1/"
 
     private val api = Retrofit.Builder()
         .baseUrl(BASE_URL)
@@ -17,7 +18,7 @@ class WeatherApiService {
         .create(WeatherApi::class.java)
 
     fun getWeather(): Single<Root> {
-        return api.getQuakes()
+        return api.getWeather()
     }
 
 
