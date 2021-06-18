@@ -13,8 +13,8 @@ interface WeatherApi {
         "Content-type:application/json"
     )
 
-//    @GET("query?format=geojson&starttime=2019-12-11&endtime=2019-12-12")
-//    fun getQuakes(): Single<Root>
+    @GET("query?format=geojson&starttime=2019-12-11&endtime=2019-12-12")
+    fun getQuakes(): Single<Root>
 
     @GET("weather?q=London,uk&APPID=${weatherKey}")
     fun getWeather(): Single<Root>
