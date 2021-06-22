@@ -37,7 +37,7 @@ class ListViewModel(application: Application) : BaseViewModel(application) {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeWith(object : DisposableSingleObserver<Root>() {
                     override fun onSuccess(weatherList: Root) {
-
+                        createWeatherList(weatherList)
                         Log.d(TAG, "RxJava  ${weatherList}")
                     }
 
@@ -59,6 +59,15 @@ class ListViewModel(application: Application) : BaseViewModel(application) {
     override fun onCleared() {
         super.onCleared()
         disposable.clear()
+    }
+
+    private fun createWeatherList(weatherList: Root) {
+        //var list = mutableListOf<Quake1>()
+        for (q in weatherList.weather.toString()!!) {
+            //list.add(Quake1(q.properties?.place.toString(), q.properties?.mag))
+            Log.d(TAG,"${q}")
+        }
+        //return list
     }
 
 
