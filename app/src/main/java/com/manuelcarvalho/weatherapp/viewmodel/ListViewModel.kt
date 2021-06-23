@@ -63,10 +63,11 @@ class ListViewModel(application: Application) : BaseViewModel(application) {
 
     private fun createWeatherList(weatherList: Root) {
         //var list = mutableListOf<Quake1>()
-        for (q in weatherList.weather.toString()!!) {
-            //list.add(Quake1(q.properties?.place.toString(), q.properties?.mag))
-            Log.d(TAG,"${q}")
-        }
+        Log.d(TAG,"${weatherList.main?.temp}")
+//        for (q in weatherList.main!!) {
+//            //list.add(Quake1(q.properties?.place.toString(), q.properties?.mag))
+//            Log.d(TAG,"${q}")
+//        }
         //return list
     }
 
