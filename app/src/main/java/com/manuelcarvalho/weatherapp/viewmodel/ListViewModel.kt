@@ -24,6 +24,7 @@ class ListViewModel(application: Application) : BaseViewModel(application) {
     private val weatherService = WeatherApiService()
     private val disposable = CompositeDisposable()
 
+    val weatherEvent = MutableLiveData<Root>()
 
 
 
@@ -37,7 +38,8 @@ class ListViewModel(application: Application) : BaseViewModel(application) {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeWith(object : DisposableSingleObserver<Root>() {
                     override fun onSuccess(weatherList: Root) {
-                        createWeatherList(weatherList)
+                        weatherEvent.value = weatherList
+                        //createWeatherList(weatherList)
                         Log.d(TAG, "RxJava  ${weatherList}")
                     }
 
