@@ -6,9 +6,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.GridLayoutManager
 import com.manuelcarvalho.weatherapp.R
 import com.manuelcarvalho.weatherapp.databinding.FragmentFirstBinding
 import com.manuelcarvalho.weatherapp.viewmodel.ListViewModel
@@ -18,6 +20,8 @@ class FirstFragment : Fragment() {
 
     private var _binding: FragmentFirstBinding? = null
     private lateinit var viewModel: ListViewModel
+
+    private lateinit var textView: TextView
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -35,6 +39,8 @@ class FirstFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        textView = view.findViewById(R.id.textview_first)
 
         viewModel = activity?.run {
             ViewModelProviders.of(this)[ListViewModel::class.java]
@@ -54,12 +60,13 @@ class FirstFragment : Fragment() {
 
     fun observeViewModel() {
 
-        viewModel.weatherEvent.observe(this, Observer { loading ->
+        viewModel.weatherEvent.observe(viewLifecycleOwner, Observer { loading ->
             loading?.let {
-                Log.d(TAG,"weatherEvent changed")
+                Log.d(TAG, "weatherEvent changed")
+                val a = it.main?.feels_like?.minus(273.15)
+                textView.text = a.toString()
             }
+
         })
-
-
     }
 }
