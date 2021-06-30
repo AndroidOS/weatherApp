@@ -6,7 +6,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.content.ContextCompat
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.findNavController
@@ -22,6 +24,8 @@ class FirstFragment : Fragment() {
     private lateinit var viewModel: ListViewModel
 
     private lateinit var textView: TextView
+    private lateinit var image: ImageView
+
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -41,7 +45,16 @@ class FirstFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         textView = view.findViewById(R.id.textview_first)
+        image = view.findViewById(R.id.imageView)
 
+        image.setImageDrawable(
+            context?.let {
+                ContextCompat.getDrawable(
+                    it, // Context
+                    R.drawable.rain // Drawable
+                )
+            }
+        )
         viewModel = activity?.run {
             ViewModelProviders.of(this)[ListViewModel::class.java]
         } ?: throw Exception("Invalid Activity")
