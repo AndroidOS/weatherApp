@@ -78,7 +78,8 @@ class FirstFragment : Fragment() {
                 Log.d(TAG, "weatherEvent changed")
                 val a = it.main?.feels_like?.minus(273.15)
                 val maxTemp = it.main?.temp_max?.minus(273.15)
-                Log.d(TAG, "${maxTemp}")
+                val description = it.weather?.get(0)?.description
+                Log.d(TAG, "${description}")
                 textView.text = maxTemp.toString()
             }
 
