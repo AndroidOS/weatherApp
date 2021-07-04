@@ -24,6 +24,7 @@ class FirstFragment : Fragment() {
     private lateinit var viewModel: ListViewModel
 
     private lateinit var textView: TextView
+    private lateinit var txt_desc: TextView
     private lateinit var image: ImageView
 
 
@@ -45,6 +46,7 @@ class FirstFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         textView = view.findViewById(R.id.textview_first)
+        txt_desc = view.findViewById(R.id.txt_clouds)
         image = view.findViewById(R.id.imageView)
 
         image.setImageDrawable(
@@ -81,6 +83,7 @@ class FirstFragment : Fragment() {
                 val description = it.weather?.get(0)?.description
                 Log.d(TAG, "${description}")
                 textView.text = maxTemp.toString()
+                txt_desc.text = description.toString()
             }
 
         })
