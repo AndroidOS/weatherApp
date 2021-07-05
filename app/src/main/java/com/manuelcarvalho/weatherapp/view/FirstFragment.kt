@@ -81,6 +81,13 @@ class FirstFragment : Fragment() {
                 val a = it.main?.feels_like?.minus(273.15)
                 val maxTemp = it.main?.temp_max?.minus(273.15)
                 val description = it.weather?.get(0)?.description
+                if (it.weather?.size != null){
+                    if (it.weather!!.size > 1){
+                        val num = it.weather!!.size
+                        Log.d(TAG,"Size = $num")
+                    }
+
+                }
                 Log.d(TAG, "${description}")
                 textView.text = maxTemp.toString()
                 txt_desc.text = description.toString()
