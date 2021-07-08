@@ -16,6 +16,9 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.manuelcarvalho.weatherapp.R
 import com.manuelcarvalho.weatherapp.databinding.FragmentFirstBinding
 import com.manuelcarvalho.weatherapp.viewmodel.ListViewModel
+import java.math.BigDecimal
+import java.math.RoundingMode
+import kotlin.math.roundToInt
 
 private const val TAG = "FirstFragment"
 class FirstFragment : Fragment() {
@@ -61,9 +64,9 @@ class FirstFragment : Fragment() {
             ViewModelProviders.of(this)[ListViewModel::class.java]
         } ?: throw Exception("Invalid Activity")
 
-        binding.buttonFirst.setOnClickListener {
-            findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
-        }
+//        binding.buttonFirst.setOnClickListener {
+//            findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
+//        }
 
         observeViewModel()
     }
@@ -79,7 +82,8 @@ class FirstFragment : Fragment() {
             loading?.let {
                 Log.d(TAG, "weatherEvent changed")
                 val a = it.main?.feels_like?.minus(273.15)
-                val maxTemp = it.main?.temp_max?.minus(273.15)
+                val tmpTemp = it.main?.temp_max?.minus(273.15)
+                val maxTemp = tmpTemp?.let { it1 -> BigDecimal(it1).setScale(2, RoundingMode.HALF_EVEN) }
                 val description = it.weather?.get(0)?.description
                 if (it.weather?.size != null){
                     if (it.weather!!.size > 1){
