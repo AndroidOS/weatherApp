@@ -25,6 +25,7 @@ class ListViewModel(application: Application) : BaseViewModel(application) {
     private val disposable = CompositeDisposable()
 
     val weatherEvent = MutableLiveData<Root>()
+    val weatherIcon = MutableLiveData<String>()
 
 
 
@@ -40,7 +41,8 @@ class ListViewModel(application: Application) : BaseViewModel(application) {
                     override fun onSuccess(weatherList: Root) {
                         weatherEvent.value = weatherList
                         //createWeatherList(weatherList)
-                        Log.d(TAG, "RxJava  ${weatherList}")
+                        weatherIcon.value = weatherList.weather?.get(0)?.icon
+                        Log.d(TAG, "RxJava  ${weatherIcon.value}")
                     }
 
                     override fun onError(e: Throwable) {
