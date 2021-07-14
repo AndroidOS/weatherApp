@@ -98,5 +98,14 @@ class FirstFragment : Fragment() {
             }
 
         })
+
+        viewModel.weatherIcon.observe(viewLifecycleOwner, Observer { icon ->
+            icon?.let {
+                Log.d(TAG, "weatherIcon changed")
+
+
+                }
+
+        })
     }
 }
