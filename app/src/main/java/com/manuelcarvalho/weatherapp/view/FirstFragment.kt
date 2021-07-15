@@ -101,8 +101,9 @@ class FirstFragment : Fragment() {
 
         viewModel.weatherIcon.observe(viewLifecycleOwner, Observer { icon ->
             icon?.let {
-                Log.d(TAG, "weatherIcon changed")
-
+                var url = "http://openweathermap.org/img/wn/" + "${it}" + "@2x.png"
+                Log.d(TAG, "weatherIcon changed $url")
+                //  http://openweathermap.org/img/wn/10d@2x.png
 
                 }
 
