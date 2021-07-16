@@ -1,24 +1,24 @@
 package com.manuelcarvalho.weatherapp.view
 
+import android.icu.number.NumberFormatter.with
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.content.ContextCompat
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
-import androidx.navigation.fragment.findNavController
-import androidx.recyclerview.widget.GridLayoutManager
 import com.manuelcarvalho.weatherapp.R
 import com.manuelcarvalho.weatherapp.databinding.FragmentFirstBinding
 import com.manuelcarvalho.weatherapp.viewmodel.ListViewModel
+import com.squareup.picasso.Picasso
 import java.math.BigDecimal
 import java.math.RoundingMode
-import kotlin.math.roundToInt
+
 
 private const val TAG = "FirstFragment"
 class FirstFragment : Fragment() {
@@ -29,6 +29,8 @@ class FirstFragment : Fragment() {
     private lateinit var textView: TextView
     private lateinit var txt_desc: TextView
     private lateinit var image: ImageView
+
+    private lateinit var imageIcon: ImageView
 
 
     // This property is only valid between onCreateView and
@@ -51,6 +53,7 @@ class FirstFragment : Fragment() {
         textView = view.findViewById(R.id.textview_first)
         txt_desc = view.findViewById(R.id.txt_clouds)
         image = view.findViewById(R.id.imageView)
+        imageIcon = view.findViewById(R.id.imageIcon)
 
         image.setImageDrawable(
             context?.let {
@@ -105,6 +108,9 @@ class FirstFragment : Fragment() {
                 Log.d(TAG, "weatherIcon changed $url")
                 //  http://openweathermap.org/img/wn/10d@2x.png
 
+                val imageUri = "https://i.imgur.com/tGbaZCY.jpg"
+
+                Picasso.get().load(url).into(imageIcon);
                 }
 
         })
