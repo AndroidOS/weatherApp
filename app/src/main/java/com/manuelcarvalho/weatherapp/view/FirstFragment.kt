@@ -55,7 +55,7 @@ class FirstFragment : Fragment() {
         image = view.findViewById(R.id.imageView)
         imageIcon = view.findViewById(R.id.imageIcon)
 
-        image.setImageDrawable(
+        imageIcon.setImageDrawable(
             context?.let {
                 ContextCompat.getDrawable(
                     it, // Context
@@ -111,8 +111,10 @@ class FirstFragment : Fragment() {
                 val imageUri = "https://i.imgur.com/tGbaZCY.jpg"
 
                 Picasso.get().load(url).into(imageIcon);
-                }
 
+
+            Picasso.get().load(url).into(imageIcon)
+            }
         })
     }
 }

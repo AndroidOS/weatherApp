@@ -62,4 +62,18 @@
         app:layout_constraintEnd_toStartOf="@+id/textview_first"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="73dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="100dp"
+        android:text="Bar:"
+        android:textColor="@color/red"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_temp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
