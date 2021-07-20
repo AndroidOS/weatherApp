@@ -28,6 +28,7 @@ class FirstFragment : Fragment() {
 
     private lateinit var textView: TextView
     private lateinit var txt_desc: TextView
+    private lateinit var txt_bar: TextView
     private lateinit var image: ImageView
 
     private lateinit var imageIcon: ImageView
@@ -52,6 +53,7 @@ class FirstFragment : Fragment() {
 
         textView = view.findViewById(R.id.textview_first)
         txt_desc = view.findViewById(R.id.txt_clouds)
+        txt_bar = view.findViewById(R.id.txt_bar)
         image = view.findViewById(R.id.imageView)
         imageIcon = view.findViewById(R.id.imageIcon)
 
@@ -88,6 +90,7 @@ class FirstFragment : Fragment() {
                 val tmpTemp = it.main?.temp_max?.minus(273.15)
                 val maxTemp = tmpTemp?.let { it1 -> BigDecimal(it1).setScale(2, RoundingMode.HALF_EVEN) }
                 val description = it.weather?.get(0)?.description
+                val barometric = it.main?.pressure
                 if (it.weather?.size != null){
                     if (it.weather!!.size > 1){
                         val num = it.weather!!.size
@@ -95,7 +98,7 @@ class FirstFragment : Fragment() {
                     }
 
                 }
-                Log.d(TAG, "${description}")
+                Log.d(TAG, "${barometric}")
                 textView.text = maxTemp.toString()
                 txt_desc.text = description.toString()
             }
