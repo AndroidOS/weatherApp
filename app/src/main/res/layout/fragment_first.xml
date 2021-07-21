@@ -4,6 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingLeft="@dimen/fab_margin"
+    android:textAlignment="textStart"
     tools:context=".view.FirstFragment">
 
     <ImageView
@@ -14,7 +16,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-<!--        tools:src="@tools:sample/backgrounds/scenic" />-->
+    <!--        tools:src="@tools:sample/backgrounds/scenic" />-->
 
     <ImageView
         android:id="@+id/imageIcon"
@@ -23,7 +25,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-<!--        tools:src="@tools:sample/avatars" />-->
+    <!--        tools:src="@tools:sample/avatars" />-->
 
     <TextView
         android:id="@+id/txt_clouds"
@@ -81,6 +83,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
+        android:textAlignment="viewStart"
         android:textColor="@color/red"
         android:textSize="60sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/textView"

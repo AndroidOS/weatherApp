@@ -101,6 +101,7 @@ class FirstFragment : Fragment() {
                 Log.d(TAG, "${barometric}")
                 textView.text = maxTemp.toString()
                 txt_desc.text = description.toString()
+                txt_bar.text = barometric.toString()
             }
 
         })
