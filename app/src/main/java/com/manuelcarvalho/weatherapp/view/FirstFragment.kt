@@ -91,6 +91,7 @@ class FirstFragment : Fragment() {
                 val maxTemp = tmpTemp?.let { it1 -> BigDecimal(it1).setScale(2, RoundingMode.HALF_EVEN) }
                 val description = it.weather?.get(0)?.description
                 val barometric = it.main?.pressure
+                val humidity = it.main?.humidity
                 if (it.weather?.size != null){
                     if (it.weather!!.size > 1){
                         val num = it.weather!!.size
