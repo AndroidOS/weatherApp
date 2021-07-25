@@ -30,6 +30,7 @@ class FirstFragment : Fragment() {
     private lateinit var txt_desc: TextView
     private lateinit var txt_bar: TextView
     private lateinit var image: ImageView
+    private lateinit var txt_hum: TextView
 
     private lateinit var imageIcon: ImageView
 
@@ -54,6 +55,7 @@ class FirstFragment : Fragment() {
         textView = view.findViewById(R.id.textview_first)
         txt_desc = view.findViewById(R.id.txt_clouds)
         txt_bar = view.findViewById(R.id.txt_bar)
+        txt_hum = view.findViewById(R.id.txt_bar)
         image = view.findViewById(R.id.imageView)
         imageIcon = view.findViewById(R.id.imageIcon)
 
