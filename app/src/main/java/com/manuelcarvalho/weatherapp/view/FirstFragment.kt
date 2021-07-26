@@ -55,7 +55,7 @@ class FirstFragment : Fragment() {
         textView = view.findViewById(R.id.textview_first)
         txt_desc = view.findViewById(R.id.txt_clouds)
         txt_bar = view.findViewById(R.id.txt_bar)
-        txt_hum = view.findViewById(R.id.txt_bar)
+        txt_hum = view.findViewById(R.id.txt_hum_num)
         image = view.findViewById(R.id.imageView)
         imageIcon = view.findViewById(R.id.imageIcon)
 
@@ -105,6 +105,7 @@ class FirstFragment : Fragment() {
                 textView.text = maxTemp.toString()
                 txt_desc.text = description.toString()
                 txt_bar.text = barometric.toString()
+                txt_hum.text = humidity.toString() + "%"
             }
 
         })
