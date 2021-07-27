@@ -59,14 +59,14 @@ class FirstFragment : Fragment() {
         image = view.findViewById(R.id.imageView)
         imageIcon = view.findViewById(R.id.imageIcon)
 
-        imageIcon.setImageDrawable(
-            context?.let {
-                ContextCompat.getDrawable(
-                    it, // Context
-                    R.drawable.rain // Drawable
-                )
-            }
-        )
+//        imageIcon.setImageDrawable(
+//            context?.let {
+//                ContextCompat.getDrawable(
+//                    it, // Context
+//                    R.drawable.rain // Drawable
+//                )
+//            }
+//        )
         viewModel = activity?.run {
             ViewModelProviders.of(this)[ListViewModel::class.java]
         } ?: throw Exception("Invalid Activity")
