@@ -35,6 +35,8 @@ class MainActivity : AppCompatActivity() {
         appBarConfiguration = AppBarConfiguration(navController.graph)
         setupActionBarWithNavController(navController, appBarConfiguration)
 
+        viewModel.refresh()
+
         binding.fab.setOnClickListener { view ->
             viewModel.refresh()
         }
