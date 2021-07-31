@@ -6,19 +6,14 @@ import android.util.Log
 import androidx.core.content.ContextCompat.startActivity
 
 private const val TAG = "utils"
-fun sendEmail(context: Context, list: List<String>) {
+fun sendEmail(context: Context, desc: String) {
 
-    Log.d(TAG, "${list}")
+
     var stringList = ""
-    var manufacturer = ""
 
-    for (n in list) {
-        stringList += "${n}\n"
-        //manufacturer = n.manufacturer
-    }
 
     val to = "tom@gmail.com"
-    val subject = "cartridge list for ${manufacturer}."
+    val subject = "Weather for today"
     val message = stringList
 
     val intent = Intent(Intent.ACTION_SEND)
