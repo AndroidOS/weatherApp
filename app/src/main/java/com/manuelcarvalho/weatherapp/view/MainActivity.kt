@@ -12,6 +12,7 @@ import android.view.MenuItem
 import androidx.lifecycle.ViewModelProviders
 import com.manuelcarvalho.weatherapp.R
 import com.manuelcarvalho.weatherapp.databinding.ActivityMainBinding
+import com.manuelcarvalho.weatherapp.utils.sendEmail
 import com.manuelcarvalho.weatherapp.viewmodel.ListViewModel
 
 class MainActivity : AppCompatActivity() {
@@ -38,7 +39,8 @@ class MainActivity : AppCompatActivity() {
         viewModel.refresh()
 
         binding.fab.setOnClickListener { view ->
-            viewModel.refresh()
+            //viewModel.refresh()
+            sendEmail(this, makeList())
         }
     }
 
@@ -67,5 +69,9 @@ class MainActivity : AppCompatActivity() {
         val navController = findNavController(R.id.nav_host_fragment_content_main)
         return navController.navigateUp(appBarConfiguration)
                 || super.onSupportNavigateUp()
+    }
+
+    private fun makeList(): String{
+        return ""
     }
 }
