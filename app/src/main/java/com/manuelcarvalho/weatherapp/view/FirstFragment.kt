@@ -34,6 +34,8 @@ class FirstFragment : Fragment() {
 
     private lateinit var imageIcon: ImageView
 
+    private var weatherString = ""
+
 
     // This property is only valid between onCreateView and
     // onDestroyView.

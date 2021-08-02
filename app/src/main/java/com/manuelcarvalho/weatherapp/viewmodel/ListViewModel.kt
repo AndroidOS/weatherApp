@@ -60,6 +60,7 @@ class ListViewModel(application: Application) : BaseViewModel(application) {
     }
 
 
+
     override fun onCleared() {
         super.onCleared()
         disposable.clear()
