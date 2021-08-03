@@ -108,6 +108,8 @@ class FirstFragment : Fragment() {
                 txt_desc.text = description.toString()
                 txt_bar.text = barometric.toString()
                 txt_hum.text = humidity.toString() + "%"
+
+                weatherString = "Barometric pressure ${barometric.toString()},\n Maximum temperature ${maxTemp.toString()}"
             }
 
         })
