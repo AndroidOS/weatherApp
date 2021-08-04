@@ -13,6 +13,7 @@ import androidx.lifecycle.ViewModelProviders
 import com.manuelcarvalho.weatherapp.R
 import com.manuelcarvalho.weatherapp.databinding.ActivityMainBinding
 import com.manuelcarvalho.weatherapp.utils.sendEmail
+import com.manuelcarvalho.weatherapp.utils.weatherString
 import com.manuelcarvalho.weatherapp.viewmodel.ListViewModel
 
 class MainActivity : AppCompatActivity() {
@@ -40,7 +41,7 @@ class MainActivity : AppCompatActivity() {
 
         binding.fab.setOnClickListener { view ->
             //viewModel.refresh()
-            sendEmail(this, makeList())
+            sendEmail(this, weatherString)
         }
     }
 

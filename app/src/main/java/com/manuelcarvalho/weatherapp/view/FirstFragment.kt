@@ -14,6 +14,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.manuelcarvalho.weatherapp.R
 import com.manuelcarvalho.weatherapp.databinding.FragmentFirstBinding
+import com.manuelcarvalho.weatherapp.utils.weatherEmail
 import com.manuelcarvalho.weatherapp.viewmodel.ListViewModel
 import com.squareup.picasso.Picasso
 import java.math.BigDecimal
@@ -109,7 +110,7 @@ class FirstFragment : Fragment() {
                 txt_bar.text = barometric.toString()
                 txt_hum.text = humidity.toString() + "%"
 
-                weatherString = "Barometric pressure ${barometric.toString()},\n Maximum temperature ${maxTemp.toString()}"
+                weatherEmail = "Barometric pressure ${barometric.toString()},\n Maximum temperature ${maxTemp.toString()}"
             }
 
         })
