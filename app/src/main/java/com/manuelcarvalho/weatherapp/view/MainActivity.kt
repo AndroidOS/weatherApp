@@ -1,6 +1,7 @@
 package com.manuelcarvalho.weatherapp.view
 
 import android.os.Bundle
+import android.util.Log
 import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
@@ -13,9 +14,10 @@ import androidx.lifecycle.ViewModelProviders
 import com.manuelcarvalho.weatherapp.R
 import com.manuelcarvalho.weatherapp.databinding.ActivityMainBinding
 import com.manuelcarvalho.weatherapp.utils.sendEmail
-import com.manuelcarvalho.weatherapp.utils.weatherString
+import com.manuelcarvalho.weatherapp.utils.weatherEmail
 import com.manuelcarvalho.weatherapp.viewmodel.ListViewModel
 
+private const val TAG = "MainActivity"
 class MainActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
@@ -41,7 +43,8 @@ class MainActivity : AppCompatActivity() {
 
         binding.fab.setOnClickListener { view ->
             //viewModel.refresh()
-            sendEmail(this, weatherString)
+            Log.d(TAG, weatherEmail)
+            sendEmail(this, weatherEmail)
         }
     }
 
