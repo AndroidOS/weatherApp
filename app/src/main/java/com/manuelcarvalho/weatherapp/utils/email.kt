@@ -14,7 +14,7 @@ fun sendEmail(context: Context, desc: String) {
 
     val to = "tom@gmail.com"
     val subject = "Weather for today"
-    val message = stringList
+    val message = desc
 
     val intent = Intent(Intent.ACTION_SEND)
     val addressees = arrayOf(to)
