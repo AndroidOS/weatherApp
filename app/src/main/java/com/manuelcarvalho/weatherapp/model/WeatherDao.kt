@@ -8,14 +8,14 @@ import androidx.room.Insert
 interface WeatherDao {
 
     @Insert
-    suspend fun insertAll(vararg quakes: Quake1): List<Long>
+    suspend fun insertAll(vararg quakes: Weather1): List<Long>
 
-    @androidx.room.Query("SELECT * FROM quake1")
-    suspend fun getAllQuakes(): List<Quake1>
+    @androidx.room.Query("SELECT * FROM Weather1")
+    suspend fun getAllQuakes(): List<Weather1>
 
-    @androidx.room.Query("SELECT * FROM quake1 WHERE uuid = :quakeId")
-    suspend fun getQuake(quakeId: Int): Quake1
+    @androidx.room.Query("SELECT * FROM Weather1 WHERE uuid = :quakeId")
+    suspend fun getQuake(quakeId: Int): Weather1
 
-    @androidx.room.Query("DELETE FROM quake1")
+    @androidx.room.Query("DELETE FROM Weather1")
     suspend fun deleteAllQuakes()
 }

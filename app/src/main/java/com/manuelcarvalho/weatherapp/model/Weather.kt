@@ -1,7 +1,6 @@
 package com.manuelcarvalho.weatherapp.model
 
-class Weather1 {
-}
+
 
 
 class Coord {
