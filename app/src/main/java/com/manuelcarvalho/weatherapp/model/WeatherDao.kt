@@ -16,6 +16,6 @@ interface WeatherDao {
 //    @androidx.room.Query("SELECT * FROM Weather1 WHERE uuid = :weatherId")
 //    suspend fun getQuake(quakeId: Int): Weather1
 //
-//    @androidx.room.Query("DELETE FROM Weather1")
-//    suspend fun deleteAllQuakes()
+    @androidx.room.Query("DELETE FROM Weather1")
+    suspend fun deleteAllWeather()
 }

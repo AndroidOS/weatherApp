@@ -7,6 +7,7 @@ import androidx.lifecycle.MutableLiveData
 import com.casa.azul.dogs.viewmodel.BaseViewModel
 import com.manuelcarvalho.weatherapp.model.Root
 import com.manuelcarvalho.weatherapp.model.WeatherApiService
+import com.manuelcarvalho.weatherapp.model.WeatherDatabase
 
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
@@ -75,6 +76,22 @@ class ListViewModel(application: Application) : BaseViewModel(application) {
 //        }
         //return list
     }
+
+    private fun storeWeatherLocally(weatherList: Root) {
+        launch {
+            val list = weatherList
+            val dao = WeatherDatabase(getApplication()).weatherDao()
+            dao.deleteAllWeather()
+            //val result = dao.insertAll(*list)
+            var i = 0
+//            while (i < list.size) {
+//                list[i].uuid = result[i].toInt()
+//                ++i
+//            }
+
+        }
+    }
+
 
 
 }
