@@ -44,6 +44,7 @@ class ListViewModel(application: Application) : BaseViewModel(application) {
                         //createWeatherList(weatherList)
                         weatherIcon.value = weatherList.weather?.get(0)?.icon
                         Log.d(TAG, "RxJava  ${weatherIcon.value}")
+                        storeWeatherLocally(weatherList)
                     }
 
                     override fun onError(e: Throwable) {
