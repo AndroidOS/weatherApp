@@ -6,6 +6,7 @@ import android.widget.Toast
 import androidx.lifecycle.MutableLiveData
 import com.casa.azul.dogs.viewmodel.BaseViewModel
 import com.manuelcarvalho.weatherapp.model.Root
+import com.manuelcarvalho.weatherapp.model.Weather1
 import com.manuelcarvalho.weatherapp.model.WeatherApiService
 import com.manuelcarvalho.weatherapp.model.WeatherDatabase
 
@@ -83,7 +84,9 @@ class ListViewModel(application: Application) : BaseViewModel(application) {
             val list = weatherList
             val dao = WeatherDatabase(getApplication()).weatherDao()
             dao.deleteAllWeather()
-            //val result = dao.insertAll(*list)
+
+            var weather1 = Weather1("Sydney", 21.0,10.0,1004)
+            val result = dao.insert(weather1)
             var i = 0
 //            while (i < list.size) {
 //                list[i].uuid = result[i].toInt()
