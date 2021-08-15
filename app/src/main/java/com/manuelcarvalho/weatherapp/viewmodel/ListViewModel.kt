@@ -44,7 +44,7 @@ class ListViewModel(application: Application) : BaseViewModel(application) {
                         weatherEvent.value = weatherList
                         //createWeatherList(weatherList)
                         weatherIcon.value = weatherList.weather?.get(0)?.icon
-                        Log.d(TAG, "RxJava  ${weatherIcon.value}")
+                        Log.d(TAG, "Icon RxJava  ${weatherIcon.value}")
                         storeWeatherLocally(weatherList)
                     }
 
@@ -87,6 +87,7 @@ class ListViewModel(application: Application) : BaseViewModel(application) {
 
             var weather1 = Weather1("Sydney", 21.0,10.0,1004)
             val result = dao.insert(weather1)
+            Log.d(TAG,"uuid number = ${result}")
             var i = 0
 //            while (i < list.size) {
 //                list[i].uuid = result[i].toInt()
