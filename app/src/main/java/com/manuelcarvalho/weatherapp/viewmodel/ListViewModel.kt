@@ -79,6 +79,21 @@ class ListViewModel(application: Application) : BaseViewModel(application) {
         //return list
     }
 
+    private fun fetchFromDatabase() {
+
+        launch {
+            val quakes = WeatherDatabase(getApplication()).weatherDao().getAllWeather()
+
+
+            Toast.makeText(
+                getApplication(),
+                "Weather retrieved from database. ${quakes.size} objects",
+                Toast.LENGTH_SHORT
+            ).show()
+        }
+    }
+
+
     private fun storeWeatherLocally(weatherList: Root) {
         launch {
             val list = weatherList
@@ -93,7 +108,7 @@ class ListViewModel(application: Application) : BaseViewModel(application) {
 //                list[i].uuid = result[i].toInt()
 //                ++i
 //            }
-
+        fetchFromDatabase()
         }
     }
 
