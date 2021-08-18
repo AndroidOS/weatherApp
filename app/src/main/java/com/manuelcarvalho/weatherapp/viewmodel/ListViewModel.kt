@@ -82,12 +82,12 @@ class ListViewModel(application: Application) : BaseViewModel(application) {
     private fun fetchFromDatabase() {
 
         launch {
-            val quakes = WeatherDatabase(getApplication()).weatherDao().getAllWeather()
+            val weather = WeatherDatabase(getApplication()).weatherDao().getAllWeather()
 
 
             Toast.makeText(
                 getApplication(),
-                "Weather retrieved from database. ${quakes.size} objects",
+                "Weather retrieved from database. ${weather.size} objects",
                 Toast.LENGTH_SHORT
             ).show()
         }
