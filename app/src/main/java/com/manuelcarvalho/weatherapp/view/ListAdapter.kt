@@ -11,6 +11,8 @@ import com.manuelcarvalho.weatherapp.R
 
 
 
+
+
 private const val TAG = "ListAdapter"
 
 class ListAdapter(
@@ -21,8 +23,10 @@ class ListAdapter(
     RecyclerView.Adapter<ListAdapter.CartViewHolder>() {
 
     private val weatherList = arrayOf(1,2,3,4)
-    private lateinit var tv_weather: TextView
+    //private lateinit var tv_weather: TextView
 //
+
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CartViewHolder {
         val inflater = LayoutInflater.from(parent.context)
@@ -30,14 +34,15 @@ class ListAdapter(
             R.layout.list_view
             , parent, false
         )
-        tv_weather = view.findViewById(R.id.tv_weather)
+        //tv_weather = view.findViewById(R.id.tv_weather)
         return CartViewHolder(view)
     }
 
     override fun getItemCount() = weatherList.size
 
     override fun onBindViewHolder(holder: CartViewHolder, position: Int) {
-        holder.view.tv_weather = weatherList[position]
+//        holder.view.tv_weather.text = weatherList[position].toString()
+//        holder.view.bi
 
 
 //        holder.view.checkBox.setOnClickListener {
@@ -59,7 +64,17 @@ class ListAdapter(
     }
 
     //.navigate(FirstFragmentDirections.actionFirstFragmentToSecondFragment())
-    class CartViewHolder(var view: View) : RecyclerView.ViewHolder(view)
+    //class CartViewHolder(var view: View) : RecyclerView.ViewHolder(view)
+
+    inner class CartViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        fun bind(item: String) {
+            with(itemView) {
+                var tv_weather = itemView.findViewById(R.id.tv_weather)
+            }
+               //itemView.tv_weather.text = item.title
+
+            }
+        }
 }
 
 interface OnClickListenerInterface {
