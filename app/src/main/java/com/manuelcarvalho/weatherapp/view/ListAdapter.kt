@@ -52,13 +52,13 @@ class ListAdapter(
  //       }
 
 
-        holder.view.setOnClickListener {
-           // val cart = weatherList[position].catridge
-//            Navigation.findNavController(it)
-//                .navigate(ListFragmentDirections.actionFirstFragmentToDetailFragment(cart))
-
-
-        }
+//        holder.view.setOnClickListener {
+//           // val cart = weatherList[position].catridge
+////            Navigation.findNavController(it)
+////                .navigate(ListFragmentDirections.actionFirstFragmentToDetailFragment(cart))
+//
+//
+//        }
 
 
     }
@@ -69,7 +69,7 @@ class ListAdapter(
     inner class CartViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bind(item: String) {
             with(itemView) {
-                var tv_weather = itemView.findViewById(R.id.tv_weather)
+
             }
                //itemView.tv_weather.text = item.title
 
