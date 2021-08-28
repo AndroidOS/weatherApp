@@ -1,5 +1,6 @@
 package com.manuelcarvalho.weatherapp.view
 
+import android.content.DialogInterface
 import android.os.Bundle
 import android.util.Log
 import com.google.android.material.snackbar.Snackbar
@@ -10,6 +11,7 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import android.view.Menu
 import android.view.MenuItem
+import androidx.appcompat.app.AlertDialog
 import androidx.lifecycle.ViewModelProviders
 import com.manuelcarvalho.weatherapp.R
 import com.manuelcarvalho.weatherapp.databinding.ActivityMainBinding
@@ -77,5 +79,51 @@ class MainActivity : AppCompatActivity() {
 
     private fun makeList(): String{
         return ""
+    }
+
+    private fun dialogueQuery(items: Array<CharSequence>): String {
+
+        //val manu: List<String> = viewModel.manufacturers.value!!
+//        val dialogueItems: Array<CharSequence?>? =
+//            manu.size.let { it1 -> Array(it1, { i -> manu.get(i) }) }
+
+
+        var manu2 = ""
+        val alertDialog: AlertDialog? = this.let {
+            val builder = AlertDialog.Builder(it)
+
+            builder.apply {
+                setPositiveButton(
+                    R.string.ok,
+                    DialogInterface.OnClickListener { dialog, id ->
+                        // User clicked OK button
+                    })
+                setNegativeButton(R.string.cancel,
+                    DialogInterface.OnClickListener { dialog, id ->
+                        // User cancelled the dialog
+                    })
+
+                setTitle("Choose Cartridge")
+
+
+//                builder.setItems(
+//                    dialogueItems,
+//
+//                    DialogInterface.OnClickListener { dialog, which ->
+//                        manu2 = dialogueItems?.get(which) as String
+//                        Log.d(TAG, " onClick $manu2   $which")
+//                        viewModel.queryManufacturer(manu2)
+//
+//                    })
+
+            }
+
+            builder.create()
+        }
+
+        alertDialog?.show()
+
+        return manu2
+
     }
 }

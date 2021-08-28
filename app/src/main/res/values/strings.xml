@@ -13,4 +13,8 @@
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 
     <string name="action_email">Email</string>
+
+
+    <string name="cancel">Cancel</string>
+    <string name="ok">O.K</string>
 </resources>
