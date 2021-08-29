@@ -83,9 +83,9 @@ class MainActivity : AppCompatActivity() {
 
     private fun dialogueQuery(items: Array<CharSequence>): String {
 
-        //val manu: List<String> = viewModel.manufacturers.value!!
-//        val dialogueItems: Array<CharSequence?>? =
-//            manu.size.let { it1 -> Array(it1, { i -> manu.get(i) }) }
+        val manu: List<String> = listOf("1","2")
+        val dialogueItems: Array<CharSequence?>? =
+            manu.size.let { it1 -> Array(it1, { i -> manu.get(i) }) }
 
 
         var manu2 = ""
@@ -106,15 +106,15 @@ class MainActivity : AppCompatActivity() {
                 setTitle("Choose Cartridge")
 
 
-//                builder.setItems(
-//                    dialogueItems,
-//
-//                    DialogInterface.OnClickListener { dialog, which ->
-//                        manu2 = dialogueItems?.get(which) as String
-//                        Log.d(TAG, " onClick $manu2   $which")
-//                        viewModel.queryManufacturer(manu2)
-//
-//                    })
+                builder.setItems(
+                    dialogueItems,
+
+                    DialogInterface.OnClickListener { dialog, which ->
+                        manu2 = dialogueItems?.get(which) as String
+                        Log.d(TAG, " onClick $manu2   $which")
+
+
+                    })
 
             }
 
